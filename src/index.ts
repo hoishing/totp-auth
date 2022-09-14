@@ -1,10 +1,5 @@
 import jsSHA from 'jssha'
 
-let obj = {
-  a: 1,
-  b: 'shing',
-}
-
 // utils
 const dec2hex = (dec: number) => Math.round(dec).toString(16)
 const hex2dec = (hex: string) => parseInt(hex, 16)

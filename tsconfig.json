@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "strict": true,
     "target": "ES2020",
     "module": "ES2020",
     "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
     "declaration": true,
-    "outDir": "./lib",
-    "strict": true
+    "jsx": "react-jsx", // no need import React
+    "outDir": "./lib"
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]

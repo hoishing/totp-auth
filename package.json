@@ -2,11 +2,16 @@
   "name": "totp-auth",
   "version": "1.0.0",
   "description": "Easy-to-use timebased one time password(TOTP) generator, competible with Google Authenticator.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "type": "module",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\""
   },
   "keywords": [
     "google authenticator",
@@ -15,8 +20,14 @@
   ],
   "author": "Kelvin Ng",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoishing/totp-auth/issues"
+  },
   "devDependencies": {
+    "@types/jest": "^29.0.2",
+    "jest": "^29.0.3",
     "prettier": "^2.7.1",
+    "ts-jest": "^29.0.1",
     "typescript": "^4.8.2"
   },
   "dependencies": {
@@ -26,5 +37,5 @@
     "type": "git",
     "url": "git+https://github.com/hoishing/totp-auth.git"
   },
-  "homepage": "https://github.com/hoishing/totp-auth"
+  "homepage": "https://github.com/hoishing/totp-auth#readme"
 }
