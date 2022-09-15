@@ -4,7 +4,6 @@
   "description": "Easy-to-use timebased one time password(TOTP) generator, competible with Google Authenticator.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
   "files": [
     "lib/**/*"
   ],
