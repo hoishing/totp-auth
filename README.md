@@ -8,7 +8,7 @@ Easy-to-use timebased one time password(TOTP) generator, competible with Google 
 ## Usage
 
 ```js
-import { totp, countdown } from 'totp-auth'
+import { createTOTP, countdown } from 'totp-auth'
 
 const secret = 'abcd1234' //secret from service provider
 
