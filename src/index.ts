@@ -1,4 +1,4 @@
-import jsSHA from 'jssha'
+const jsSHA = require('jssha')
 
 // utils
 const dec2hex = (dec: number) => Math.round(dec).toString(16)

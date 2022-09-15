@@ -1,13 +1,18 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "target": "ES2017",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "commonjs",
     "declaration": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "strict": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2015",
+      "ES2016.Array.Include",
+      "ES2017.Object",
+      "ES2017.String"
+    ]
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
