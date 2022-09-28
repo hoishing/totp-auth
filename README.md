@@ -3,7 +3,7 @@
 Easy-to-use timebased one time password(TOTP) generator, competible with Google Authenticator.
 
 [![npm](https://img.shields.io/npm/v/totp-auth)](https://www.npmjs.com/package/totp-auth)
-[![NPM](https://img.shields.io/npm/l/totp-auth)](https://opensource.org/licenses/BSD-3-Clause)
+[![NPM](https://img.shields.io/npm/l/totp-auth)](https://opensource.org/licenses/ISC)
 
 ## Installation
 
