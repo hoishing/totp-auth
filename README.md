@@ -5,6 +5,16 @@ Easy-to-use timebased one time password(TOTP) generator, competible with Google 
 [![npm](https://img.shields.io/npm/v/totp-auth)](https://www.npmjs.com/package/totp-auth)
 [![NPM](https://img.shields.io/npm/l/totp-auth)](https://opensource.org/licenses/BSD-3-Clause)
 
+## Installation
+
+```shell
+# pnpm
+pnpm i totp-auth
+
+# npm
+npm i totp-auth
+```
+
 ## Usage
 
 ```js
@@ -26,10 +36,27 @@ Note: for those need to extract secret from Google Authenticator, please refer:
 
 https://github.com/krissrex/google-authenticator-exporter
 
-## Test
-
-The package contain unit test with [Jest](https://jestjs.io/). You may also verify the output with Google Authenticator.
-
 ## Source Code
 
-<img src="https://api.iconify.design/ant-design/github-filled.svg?color=%23bdb2ff&width=20" style="vertical-align:-0.25rem"/> https://github.com/hoishing/totp-auth
+https://github.com/hoishing/totp-auth
+
+### code logic
+
+1. create base32 representation of the credential
+1. calculate HMAC hash from the credential with current time
+1. shift and trim 6 digit TOTP from the hash above
+
+### Tests
+
+Both `createTOTP` and `countdown` are pure functions. Unit test with [Jest](https://jestjs.io/) are included.
+
+The TOTP output could also simply verified by Google Authenticator.
+
+### Credits
+
+Algorithum ref: http://jsfiddle.net/russau/ch8PK/
+HMAC lib: https://github.com/Caligatio/jsSHA
+
+## Need Help?
+
+Open a [github issue](https://github.com/hoishing/totp-auth/issues) or ping me on [Twitter](https://twitter.com/hoishing)
