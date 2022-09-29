@@ -18,21 +18,28 @@ npm i totp-auth
 ## Usage
 
 ```js
-import { createTOTP, countdown } from 'totp-auth'
+import { createTOTP, countdown } from "totp-auth"
+import { setInterval } from "timers/promises"
 
-const secret = 'abcd1234' //secret from service provider
+//secret from service provider
+const secret = "abcd1234"
 
 let totp = createTOTP(secret)
+let expire = countdown()
 
-setInterval(() => {
-  const expire = countdown()
-  // refresh totp every 30 sec
-  if (expire == 30) totp = createTOTP(secret)
-  console.log(`totp: ${totp}, countdown: ${expire}`)
-}, 1000)
+// current TOTP and expiring time in seconds
+console.log(`TOTP: ${totp}, expire: ${expire}`)
+
+// keep counting down and refresh TOTP every 30 sec
+for await (let _ of setInterval(1000)) {
+  const cnt = countdown()
+  if (cnt >= expire) totp = createTOTP(secret)
+  expire = cnt
+  console.log(`TOTP: ${totp}, expire: ${expire}`)
+}
 ```
 
-Note: for those need to extract secret from Google Authenticator, please refer:
+Note: for those need to extract secret keys from Google Authenticator, please refer:
 
 https://github.com/krissrex/google-authenticator-exporter
 
@@ -52,7 +59,7 @@ Both `createTOTP` and `countdown` are pure functions. Unit test with [Jest](http
 
 The TOTP output could also simply verified by Google Authenticator.
 
-### Credits
+## Credits
 
 Algorithum ref: http://jsfiddle.net/russau/ch8PK/
 HMAC lib: https://github.com/Caligatio/jsSHA
