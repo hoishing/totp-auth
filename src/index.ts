@@ -3,7 +3,7 @@ const jsSHA = require('jssha')
 // utils
 const dec2hex = (dec: number) => Math.round(dec).toString(16)
 const hex2dec = (hex: string) => parseInt(hex, 16)
-const currentEpoch = () => Math.round(new Date().getTime() / 1000.0)
+export const currentEpoch = () => Math.ceil(new Date().getTime() / 1000.0)
 
 /** encode string into base32 hex presentation */
 function base32ToHex(secret: string) {
