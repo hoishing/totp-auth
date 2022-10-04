@@ -39,9 +39,17 @@ for await (let _ of setInterval(1000)) {
 }
 ```
 
-Note: for those need to extract secret keys from Google Authenticator, please refer:
+### error handling
 
-https://github.com/krissrex/google-authenticator-exporter
+Not all strings can be secret key, invalid secret key will return a customizable error message.
+
+```js
+// invalid secret -> default error message
+createTOTP('asdf') // returns "invalid secret" 
+
+// invalid secret w/ custom error message
+createTOTP('asdf', undefined, 'bad key') // returns "bad key" 
+```
 
 ## Source Code
 
@@ -57,12 +65,18 @@ https://github.com/hoishing/totp-auth
 
 Both `createTOTP` and `countdown` are pure functions. Unit test with [Jest](https://jestjs.io/) are included.
 
-The TOTP output could also simply verified by Google Authenticator.
+The TOTP output could also simply verified by Google Authenticator output.
 
 ## Credits
 
 Algorithum ref: http://jsfiddle.net/russau/ch8PK/
 HMAC lib: https://github.com/Caligatio/jsSHA
+
+## FAQ
+
+- How can I extract secret keys from Google Authenticator?
+  - use another npm package: https://github.com/krissrex/google-authenticator-exporter
+  - use chrome extension: https://authenticator.cc/
 
 ## Need Help?
 

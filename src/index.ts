@@ -41,13 +41,16 @@ export const countdown = (epoch: number = currentEpoch()) => 30 - (epoch % 30)
  * @param secret secret sting from service provider
  * @param epoch unix epoch in seconds, default current time
  */
-export function createTOTP(secret: string, epoch: number = currentEpoch()) {
+export function createTOTP(secret: string, epoch: number = currentEpoch(), errMsg: string = 'invalid secret') {
   const hexTime = dec2hex(Math.floor(epoch / 30)).padStart(16, '0')
   const hexKey = base32ToHex(secret)
-  const hmac = keyHash(hexKey, hexTime)
-
-  const offset = hex2dec(hmac.substring(hmac.length - 1))
-  const pos = offset * 2
-  const otp = (hex2dec(hmac.substring(pos, pos + 8)) & hex2dec('7fffffff')) + ''
-  return otp.substring(otp.length - 6)
+  try {
+    const hmac = keyHash(hexKey, hexTime)
+    const offset = hex2dec(hmac.substring(hmac.length - 1))
+    const pos = offset * 2
+    const otp = (hex2dec(hmac.substring(pos, pos + 8)) & hex2dec('7fffffff')) + ''
+    return otp.substring(otp.length - 6)
+  } catch {
+    return errMsg
+  }
 }
