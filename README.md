@@ -1,6 +1,6 @@
 # TOTP Auth
 
-Easy-to-use timebased one time password(TOTP) generator, competible with Google Authenticator.
+Easy-to-use timebased one time password(TOTP) generator, compatible with Google Authenticator.
 
 [![npm](https://img.shields.io/npm/v/totp-auth)](https://www.npmjs.com/package/totp-auth)
 [![NPM](https://img.shields.io/npm/l/totp-auth)](https://opensource.org/licenses/ISC)
@@ -39,7 +39,7 @@ for await (let _ of setInterval(1000)) {
 }
 ```
 
-### error handling
+### Error Handling
 
 Not all strings can be secret key, invalid secret key will return a customizable error message.
 
@@ -69,7 +69,7 @@ The TOTP output could also simply verified by Google Authenticator output.
 
 ## Credits
 
-Algorithum ref: http://jsfiddle.net/russau/ch8PK/
+Algorithm ref: http://jsfiddle.net/russau/ch8PK/
 HMAC lib: https://github.com/Caligatio/jsSHA
 
 ## FAQ
