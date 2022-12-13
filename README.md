@@ -2,7 +2,7 @@
 
 Easy-to-use timebased one time password(TOTP) generator, compatible with Google Authenticator.
 
-[![npm](https://img.shields.io/npm/v/totp-auth)](https://www.npmjs.com/package/totp-auth)
+[![npm](https://img.shields.io/npm/v/totp-auth)][npm-totp]
 [![NPM](https://img.shields.io/npm/l/totp-auth)](https://opensource.org/licenses/ISC)
 
 ## Installation
@@ -51,9 +51,10 @@ createTOTP('asdf') // returns "invalid secret"
 createTOTP('asdf', undefined, 'bad key') // returns "bad key" 
 ```
 
-## Source Code
+## Technical Details
 
-https://github.com/hoishing/totp-auth
+🔗 [source code](https://github.com/hoishing/totp-auth)
+🔗 [npm package download][npm-totp]
 
 ### code logic
 
@@ -81,3 +82,5 @@ HMAC lib: https://github.com/Caligatio/jsSHA
 ## Need Help?
 
 Open a [github issue](https://github.com/hoishing/totp-auth/issues) or ping me on [Twitter](https://twitter.com/hoishing)
+
+[npm-totp]: https://www.npmjs.com/package/totp-auth
