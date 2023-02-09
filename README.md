@@ -1,9 +1,15 @@
 # TOTP Auth
 
+[![npm-badge]][npm-totp] ![ts-badge] ![prettier-badge] ![license-badge]
+
 > Easy-to-use timebased one time password(TOTP) generator, compatible with Google Authenticator.
 
-[![npm](https://img.shields.io/npm/v/totp-auth)][npm-totp]
-[![NPM](https://img.shields.io/npm/l/totp-auth)](https://opensource.org/licenses/ISC)
+🔗 [source code](https://github.com/hoishing/totp-auth)
+
+[npm-badge]: https://img.shields.io/npm/v/totp-auth
+[license-badge]: https://img.shields.io/npm/l/totp-auth
+[ts-badge]: https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue
+[prettier-badge]: https://img.shields.io/badge/formatter-prettier-yellow
 
 ## Installation
 
@@ -53,8 +59,7 @@ createTOTP('asdf', undefined, 'bad key') // returns "bad key"
 
 ## Technical Details
 
-🔗 [source code](https://github.com/hoishing/totp-auth)<br/>
-🔗 [npm package download][npm-totp]
+📥 [npm package download][npm-totp]
 
 ### code logic
 
@@ -79,8 +84,11 @@ HMAC lib: https://github.com/Caligatio/jsSHA
   - use another npm package: https://github.com/krissrex/google-authenticator-exporter
   - use chrome extension: https://authenticator.cc/
 
-## Need Help?
+## Questions?
 
-Open a [github issue](https://github.com/hoishing/totp-auth/issues) or ping me on [Twitter](https://twitter.com/hoishing)
+Open a [github issue] or ping me on [Twitter ![twitter-icon]][Twitter]
 
+[github issue]: https://github.com/hoishing/totp-auth/issues
+[Twitter]: https://twitter.com/intent/tweet?text=https://github.com/hoishing/totp-auth/%20%0D@hoishing
+[twitter-icon]: https://api.iconify.design/logos/twitter.svg?width=20
 [npm-totp]: https://www.npmjs.com/package/totp-auth
