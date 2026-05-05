@@ -23,6 +23,24 @@ npm i totp-auth
 
 ## Usage
 
+### CLI
+
+```shell
+totp-auth JBSWY3DPEHPK3PXP
+# {"passcode":"123456","expire-seconds":17}
+```
+
+The CLI accepts the TOTP secret as the first positional argument and writes only JSON to stdout on success. The `expire-seconds` value is the number of seconds remaining before the current passcode rotates.
+
+Invalid or missing secrets return a JSON error on stderr and exit with a non-zero status.
+
+```shell
+totp-auth asdf
+# {"error":"invalid secret"}
+```
+
+### Library
+
 ```js
 import { createTOTP, countdown } from "totp-auth"
 import { setInterval } from "timers/promises"
